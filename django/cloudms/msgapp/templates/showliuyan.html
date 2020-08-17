@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>所有留言</title>
+    <link rel="shortcut icon" href="../static/暴雪.png" type="image/x-icon">
+    <style>
+        body {
+            height: 1080px;
+            background-image: linear-gradient(to top, #a18cd1 20%, #fbc2eb 100%);
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body>
+<h2>历史留言</h2>
+{% for line, time in ly_date %}
+    <span style="font-size: 100%; font-family: 'Microsoft YaHei UI'">{{ line }}</span>&nbsp&nbsp
+    <span style="font-size: 80%; color: gray">{{ time }}</span><br><br>
+{% endfor %}
+</body>
+</html>

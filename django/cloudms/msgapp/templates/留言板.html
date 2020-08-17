@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <link rel="shortcut icon" href="../static/暴雪.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <title>留言板</title>
+</head>
+<script type="text/javascript" src="../static/mypost.js"></script>
+<link rel="stylesheet" type="text/css" href="../static/my_css.css">
+<body style="background-color: #42474a" background="../static/bilibili.png">
+
+<h1>Hello Django</h1>
+
+
+<h2>历史留言</h2>
+{% for line, time in ly_date %}
+<span style="font-size: 100%; font-family: 'Microsoft YaHei UI'">{{line}}</span>&nbsp&nbsp
+    <span style="font-size: 80%; color: gray">{{time}}</span><br><br>
+{% endfor %}
+<br>
+
+<form name="input" action="/" method="post">
+    {% csrf_token %}
+    输入留言：<input id='110' type="text" name="message" size="36"><br>
+    <input class="input_1 " type="submit" value="提交留言" onclick="my_post()">
+</form>
+<br>
+
+
+<form action="/all/" method="get">
+    <input class="input_2"  type="submit" value="查看所有留言">
+</form>
+<br>
+<div><a href="../help">Help</a>&nbsp&nbsp&nbsp&nbsp<a href="../download">Download</a></div>
+<h4>词云</h4>
+<ul>
+    <li><a href="../static/my_django_white.png">背景-白</a></li>
+    <li><a href="../static/wordcloud-black.png">背景-黑</a></li>
+    <li><a href="../static/my_django_gray.png">背景-灰</a></li>
+    <li><a href="../static/my_django_pink.png">背景-粉</a></li>
+</ul>
+
+</body>
+</html>
